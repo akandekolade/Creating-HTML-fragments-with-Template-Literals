@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    const person ={
+        name: "kolade",
+        job: "jobless",
+        city: "ibadan",
+        bio: "something about me"
+    };
+
+    const markup= `
+    <div class="person">
+        <h2>
+            ${person.name}
+            <span class="job">${person.job}</span>
+        </h2>
+        <p class="city">${person.city}</p>
+        <p class="bio">${person.bio}</p>
+    </div>
+    `;
+console.log(markup)
+    document.body.innerHTML = markup
+    
+    //
+     const dogs=[
+         {name: "jan di",  age: 6},
+         {name:"chelsea", age: 1}
+        ];
+
+        const markup2 =`
+        <ul class="dogs">
+            ${dogs.map(dog => `<li>${dog.name} is ${dog.age*7}</
+                li>`).join("")}
+        </ul>
+        `;
+     document.body.innerHTML = markup2
+        console.log(markup2)
+
+        //
+
+       const song = {
+        name: "Dying to live",
+        artist:"Tupac",
+       
+    }
+
+const markup3=`
+ <div class="class">
+     <p>
+         ${song.name} - ${song.artist}
+         ${song.featuring ? `(Featuring ${song.featuring})` : 
+         ""}
+         
+     </p>
+ </div>
+`;
+
+document.body.innerHTML = markup3
+
+
+    const beer= {
+    name: "trophy",
+    brewery: " Nigerian brewries",
+    keywords: ["pale", "cloudy", "spiced", "crisp"]
+};
+
+function renderKeywords(keywords){
+    return`
+    <ul>
+        ${keywords.map(keyword=> `<li>${keyword}</li>`).join("")}
+    </ul>
+    `;
+}
+
+ const markup4 = `
+ <div class="beer">
+     <h2>${beer.name}</h2>
+     <p class="brewery">${beer.brewery}</p>
+     ${renderKeywords(beer.keywords)}
+ </div>
+ `;
+
+ document.body.innerHTML = markup4
+
+</body>
+</html>
